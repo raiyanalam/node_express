@@ -9,27 +9,17 @@ jobs:
     # checkout the repo
     - uses: actions/checkout@master
     
-    # install dependencies, build, and test
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
-        
+   
     # install eb cli
-    - name: install EB CLI using pip (Python 2.7)
-      run: |
-        python --version
-        pip --version
-        pip install awsebcli --upgrade --user
-        eb --version    
+    #- name: install EB CLI using pip (Python 2.7)
+     # run: |
+     #   python --version
+      #  pip --version
+     #   pip install awsebcli --upgrade --user
+      #  eb --version    
         
-    # deploy web app using publish profile credentials
-    #- uses: azure/webapps-deploy@master
-    #  with: 
-    #    app-name: node-rn
-    #    publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-    
-    #-uses = "actions/aws/cli@master"
-    # args = 
-    # secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+  
+    -uses: "actions/aws/cli@master"
+     with
+     args: 
+     secrets: ${{ secrets.AWS_ACCESS_KEY_ID }}, ${{ secrets.AWS_SECRET_ACCESS_KEY }}
