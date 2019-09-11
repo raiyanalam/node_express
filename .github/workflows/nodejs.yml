@@ -9,7 +9,7 @@ jobs:
     # checkout the repo
     - uses: actions/checkout@master
     - name: authorize-aws
-      uses: actions/gcloud/auth@master
+      uses: actions/aws/cli@master
       with:
         args: "organizations list-accounts"
       env:
