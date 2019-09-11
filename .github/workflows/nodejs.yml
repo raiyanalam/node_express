@@ -9,10 +9,10 @@ jobs:
     # checkout the repo
     - uses: actions/checkout@master
     
-    # name: 'Login via Google Cloud Auth Action'
-    - uses: "actions/gcloud/auth@master"
-      with:
-        secrets: ${{ secrets.GCLOUD_AUTH }}
+    - name: authorize-gcloud
+      uses: actions/gcloud/auth@master
+      env:
+        GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
         
     # name: 'GCP List Clusters '
     - uses: "actions/gcloud/cli@master"
