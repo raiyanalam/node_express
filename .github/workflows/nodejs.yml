@@ -20,6 +20,6 @@ jobs:
      uses = "actions/gcloud/auth@master"
      secrets = ["GCLOUD_AUTH"]
 
-   - name: 'GCP List Clusters'
+   - name: 'GCP List Clusters '
      uses = "actions/gcloud/cli@master"
      args = "container clusters list"
