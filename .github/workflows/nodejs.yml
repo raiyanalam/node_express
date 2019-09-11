@@ -13,6 +13,7 @@ jobs:
     - uses: "actions/gcloud/auth@master"
       with:
         secrets: ${{ secrets.GCLOUD_AUTH }}
+        
     # name: 'GCP List Clusters '
     - uses: "actions/gcloud/cli@master"
       with:
