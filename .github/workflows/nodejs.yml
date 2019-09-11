@@ -18,3 +18,5 @@ jobs:
     - uses: "actions/gcloud/cli@master"
       with:
         args: "container clusters list"
+      env:
+        GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
