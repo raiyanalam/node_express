@@ -19,6 +19,8 @@ jobs:
     # install eb cli
     - name: install using pip
       run: |
+        curl -O https://bootstrap.pypa.io/get-pip.py
+        python3 get-pip.py --user
         pip --version
         pip install awsebcli --upgrade --user
         eb --version    
