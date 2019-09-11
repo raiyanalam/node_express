@@ -1,5 +1,4 @@
-workflow "Run gcloud command" {
-  on = "push"
+workflow "Run gcloud command" {  
   resolves = "GCP List Clusters"
 }
 
