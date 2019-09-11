@@ -17,7 +17,8 @@ jobs:
         npm run test --if-present
     # name: 'Login via Google Cloud Auth Action'
     - uses: "actions/gcloud/auth@master"
-      secrets: ["GCLOUD_AUTH"]
+      with:
+        secrets: ${{ secrets.GCLOUD_AUTH }}
     # name: 'GCP List Clusters '
     - uses: "actions/gcloud/cli@master"
       args: "container clusters list"
