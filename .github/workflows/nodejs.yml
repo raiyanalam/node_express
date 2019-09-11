@@ -8,11 +8,14 @@ jobs:
     steps:
     # checkout the repo
     - uses: actions/checkout@master
-    - uses: "actions/aws/cli@master"
+    - name: authorize-aws
+      uses: actions/gcloud/auth@master
       with:
         args: "organizations list-accounts"
-        secrets: ${{ secrets.AWS_ACCESS_KEY_ID }}, ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-   
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY : ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        
     # install eb cli
     #- name: install EB CLI using pip (Python 2.7)
      # run: |
