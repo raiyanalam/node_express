@@ -17,11 +17,9 @@ jobs:
         npm run test --if-present
         
     # install eb cli
-    - name: install EB CLI using pip
+    - name: install EB CLI using pip (Python 2.7)
       run: |
         python --version
-        curl -O https://bootstrap.pypa.io/get-pip.py
-        python get-pip.py --user
         pip --version
         pip install awsebcli --upgrade --user
         eb --version    
