@@ -7,22 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:    
 #    - uses: actions/checkout@master      
-#    - name: npm install, build, and test
-#      run: |
-#        npm install
-#        npm run build --if-present
-#        npm run test --if-present
-#        echo "all good"
-
-#    - uses: actions/aws/cli@master
-#    - name: use of vars   
-#      env:
-#        MY_VAR: Hi there! My name is
-#        FIRST_NAME: Mona
-#        MIDDLE_NAME: The
-#        LAST_NAME: Octocat
-#      run: |
-#        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
     
 #    - uses: actions/aws/cli@master  
 #    - run: aws s3 ls
@@ -34,6 +18,22 @@ jobs:
       with: 
         args: |          
           "elasticbeanstalk describe-environments"
+          "elasticbeanstalk describe-applications"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+
+
+
+
+#    - uses: actions/aws/cli@master
+#    - name: use of vars   
+#      env:
+#        MY_VAR: Hi there! My name is
+#        FIRST_NAME: Mona
+#        MIDDLE_NAME: The
+#        LAST_NAME: Octocat
+#      run: |
+#        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
+#         echo ${env:PATH} 
