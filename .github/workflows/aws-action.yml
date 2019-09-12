@@ -17,8 +17,19 @@ jobs:
       uses: actions/aws/cli@master  
       with: 
         args: |          
-          "elasticbeanstalk describe-environments"
-          "elasticbeanstalk describe-applications"
+          "elasticbeanstalk describe-environments"    
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+   
+
+    - name:  copy app
+      uses: actions/aws/cli@master  
+      with: 
+        args: |          
+          "aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/"
+          #"elasticbeanstalk describe-environments"
+          #"elasticbeanstalk describe-applications"      
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
