@@ -17,6 +17,8 @@ aws actions:
 
 
 Github action syntax: https://help.github.com/en/articles/workflow-syntax-for-github-actions
+                        https://help.github.com/en/articles/metadata-syntax-for-github-actions
+                        
 
 
 github secrets doc:

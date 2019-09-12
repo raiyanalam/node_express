@@ -17,8 +17,8 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/aws/cli@master 
       with:
-        args: s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/
-#       - elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.1 --source-bundle S3Bucket="s3://elasticbeanstalk-us-east-2-867889859992",S3Key="myapp.zip"
+#        args: s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/
+        args: elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.1 --source-bundle S3Bucket="s3://elasticbeanstalk-us-east-2-867889859992",S3Key="myapp.zip"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
