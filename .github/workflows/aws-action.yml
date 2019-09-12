@@ -17,43 +17,13 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/aws/cli@master 
       with:
-        args: elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.1 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-867889859992",S3Key="myapp.zip"
+        args: elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.2 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-867889859992",S3Key="myapp.zip"
 #        args: s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/
 #              elasticbeanstalk create-application-version --application-name YourEBSAppName --version-label YourVersionLabel --source-bundle S3Bucket="a-bucket-where-you-store-your-source-bundles",S3Key="MyCodeBundle.zip"      
-#        args: elasticbeanstalk update-environment --application-name raiDemoApp --environment-name YourEBSEnvironmentName --version-label v0.0.1
+#        args: elasticbeanstalk update-environment --application-name raiDemoApp --environment-name Raidemoapp-env --version-label v0.0.1
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
 
 
-
-#    - name:  describe apps
-#      uses: actions/aws/cli@master  
-#      with: 
-#        args: |          
-#          "elasticbeanstalk describe-environments"    
-#      env:
-#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-   
-
-
-
-
-
-#"aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/demoSoftware"
-#"elasticbeanstalk describe-environments"
-#"elasticbeanstalk describe-applications" 
-
-
-#    - uses: actions/aws/cli@master
-#    - name: use of vars   
-#      env:
-#        MY_VAR: Hi there! My name is
-#        FIRST_NAME: Mona
-#        MIDDLE_NAME: The
-#        LAST_NAME: Octocat
-#      run: |
-#        echo $MY_VAR $FIRST_NAME $MIDDLE_NAME $LAST_NAME.
-#         echo ${env:PATH} 

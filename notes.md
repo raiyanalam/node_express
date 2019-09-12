@@ -18,7 +18,7 @@ aws actions:
 
 Github action syntax: https://help.github.com/en/articles/workflow-syntax-for-github-actions
                         https://help.github.com/en/articles/metadata-syntax-for-github-actions
-                        
+
 
 
 github secrets doc:
@@ -28,3 +28,5 @@ softwares installed in github agents: https://help.github.com/en/articles/softwa
 
 
 ebs commands: https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/index.html
+
+managing beanstalk applications: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications.html
