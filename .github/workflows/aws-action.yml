@@ -32,17 +32,10 @@ jobs:
     - name:  describe apps
       uses: actions/aws/cli@master  
       with: 
-        args: "elasticbeanstalk describe-applications"
+        args: |
+          "elasticbeanstalk describe-applications"
+          "elasticbeanstalk describe-applications"
+
   #    env:
   #      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   #      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
-
-  
- 
-    #- name: 'AWS CLI'
-    #  uses = "actions/aws/cli@master"
-    #  args = 
-    #  secrets = ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
-
-
