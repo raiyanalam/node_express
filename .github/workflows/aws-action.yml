@@ -6,13 +6,13 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:    
-    - uses: actions/checkout@master      
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm run test --if-present
-        echo "all good"
+#    - uses: actions/checkout@master      
+#    - name: npm install, build, and test
+#      run: |
+#        npm install
+#        npm run build --if-present
+#        npm run test --if-present
+#        echo "all good"
 
 #    - uses: actions/aws/cli@master
 #    - name: use of vars   

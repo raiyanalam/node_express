@@ -14,3 +14,11 @@ aws actions:
 1. Actions related to amazon eks (amazon elastic container service for kubernetes): https://github.com/actions/aws/tree/master/kubectl
 2. Action for aws cli: https://github.com/actions/aws/tree/master/cli
 3. 
+
+
+Github action syntax: https://help.github.com/en/articles/workflow-syntax-for-github-actions
+
+
+github secrets doc:
+https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables
+
