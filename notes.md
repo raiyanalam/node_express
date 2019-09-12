@@ -22,3 +22,4 @@ Github action syntax: https://help.github.com/en/articles/workflow-syntax-for-gi
 github secrets doc:
 https://help.github.com/en/articles/virtual-environments-for-github-actions#creating-and-using-secrets-encrypted-variables
 
+softwares installed in github agents: https://help.github.com/en/articles/software-in-virtual-environments-for-github-actions
