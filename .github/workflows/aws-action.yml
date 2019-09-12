@@ -26,8 +26,9 @@ jobs:
     - name:  copy app
       uses: actions/aws/cli@master  
       with: 
-        args: |          
-          "aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/"
+        args: |  
+          "aws s3 ls"        
+          #"aws s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/"
           #"elasticbeanstalk describe-environments"
           #"elasticbeanstalk describe-applications"      
       env:
