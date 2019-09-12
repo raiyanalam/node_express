@@ -18,7 +18,8 @@ jobs:
     - uses: actions/aws/cli@master 
       with:
 #        args: s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/
-        args: elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.1 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-867889859992",S3Key="myapp.zip"
+              elasticbeanstalk create-application-version --application-name YourEBSAppName --version-label YourVersionLabel --source-bundle S3Bucket="a-bucket-where-you-store-your-source-bundles",S3Key="MyCodeBundle.zip"
+        args: elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.1 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-867889859992/",S3Key="myapp.zip"
 #        args: elasticbeanstalk update-environment --application-name raiDemoApp --environment-name YourEBSEnvironmentName --version-label v0.0.1
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
