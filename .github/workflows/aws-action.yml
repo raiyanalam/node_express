@@ -18,7 +18,7 @@ jobs:
     - uses: actions/aws/cli@master 
       with:
 #        args: elasticbeanstalk create-application-version --application-name rai-demo --version-label v0.3 --description MyAppv1 --source-bundle S3Bucket="rai-demo-bucket",S3Key="NodeExpressSampleApp.1.zip"
-        args: elasticbeanstalk update-environment --application-name raiDemoApp --environment-name Raidemoapp-env --version-label v0.3
+        args: elasticbeanstalk update-environment --application-name rai-demo --environment-name Raidemoapp-env --version-label v0.3
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
