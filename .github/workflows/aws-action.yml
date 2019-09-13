@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: actions/aws/cli@master 
       with:
-        args: > 
+        args: \
             's3 ls' 
             'elasticbeanstalk describe-applications'      
             'elasticbeanstalk create-application-version --application-name rai-demo --version-label v0.3 --description MyAppv1 --source-bundle S3Bucket="rai-demo-bucket",S3Key="NodeExpressSampleApp.1.zip"'
