@@ -15,9 +15,9 @@ jobs:
 #        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 #     - name: checkout app and zip
 #      uses: actions/checkout@master
-    - name: checkout and zip  
-      uses: actions/checkout@master
-      run: echo "Hello"
-#        git archive -v -o NodeExpressSampleApp.1.zip --format=zip HEAD
+    - uses: actions/checkout@master
+    - run: |
+        echo "Hello"
+#       git archive -v -o NodeExpressSampleApp.1.zip --format=zip HEAD
 #        pwd
 #        ls
