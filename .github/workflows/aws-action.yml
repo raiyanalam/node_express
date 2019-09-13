@@ -1,6 +1,6 @@
 on: push
 
-name: Build and deploy Node app
+name: Build and deploy Node app to AWS EBS 
 
 jobs:
   build-and-deploy:
@@ -15,9 +15,41 @@ jobs:
 #        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 #     - name: checkout app and zip
 #      uses: actions/checkout@master
+
+    #checkout and Zip
     - uses: actions/checkout@master
     - run: |
         echo "Hello"
         git archive -v -o NodeExpressSampleApp.1.zip --format=zip HEAD
         pwd
         ls
+
+    #copy files to s3 bucket
+    - uses: actions/aws/cli@master 
+      with:
+        args: s3 cp NodeExpressSampleApp.1.zip s3://rai-demo-bucket/ 
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+    
+    #create application
+    - uses: actions/aws/cli@master 
+      with:
+        args: elasticbeanstalk create-application-version --application-name rai-demo --version-label v0.5 --description MyAppv1 --source-bundle S3Bucket="rai-demo-bucket",S3Key="NodeExpressSampleApp.1.zip"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+
+    #deploy elasticbeanstalk
+    - uses: actions/aws/cli@master 
+      with:
+        args: elasticbeanstalk update-environment --application-name rai-demo --environment-name RaiDemo-env --version-label v0.5
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+
+
+# check the live application at: http://raidemo-env.nbrycshsyt.us-east-2.elasticbeanstalk.com/
