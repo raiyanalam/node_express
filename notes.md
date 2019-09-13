@@ -62,3 +62,7 @@ Env: RaiDemo-env
 #        args: s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/   
 #        args: elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.2 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-867889859992",S3Key="myapp.zip"
 #        args: elasticbeanstalk update-environment --application-name raiDemoApp --environment-name Raidemoapp-env --version-label v0.2
+
+
+
+https://github.com/raiyanalam/node_express/blob/e0b921e8e86764d741ba83da68f703ccde611deb/.github/workflows/aws-action.yml

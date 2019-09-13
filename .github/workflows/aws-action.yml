@@ -6,15 +6,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:    
-#    - uses: actions/checkout@master      
-    
-#    - uses: actions/aws/cli@master  
-#    - run: aws s3 ls
-#      env:
-#        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-#        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-#     - name: checkout app and zip
-#      uses: actions/checkout@master
 
     #checkout and Zip
     - uses: actions/checkout@master
