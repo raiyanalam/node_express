@@ -17,7 +17,7 @@ jobs:
 #      uses: actions/checkout@master
     - name: checkout and zip  
       uses: actions/checkout@master
-      bash: |
-        git archive -v -o NodeExpressSampleApp.1.zip --format=zip HEAD
-        pwd
-        ls
+      run: echo "Hello"
+#        git archive -v -o NodeExpressSampleApp.1.zip --format=zip HEAD
+#        pwd
+#        ls
