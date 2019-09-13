@@ -40,3 +40,25 @@ aws elasticbeanstalk update-environment --application-name rai-demo --environmen
 
 App: rai-demo
 Env: RaiDemo-env
+
+
+
+      with:
+#        args: elasticbeanstalk create-application-version --application-name rai-demo --version-label v0.3 --description MyAppv1 --source-bundle S3Bucket="rai-demo-bucket",S3Key="NodeExpressSampleApp.1.zip"
+#        args: elasticbeanstalk update-environment --application-name rai-demo --environment-name RaiDemo-env --version-label v0.3
+         args: s3 ls
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+
+
+    - uses: actions/aws/cli@master 
+      with:
+#        args: elasticbeanstalk create-application-version --application-name rai-demo --version-label v0.3 --description MyAppv1 --source-bundle S3Bucket="rai-demo-bucket",S3Key="NodeExpressSampleApp.1.zip"
+        args: elasticbeanstalk describe-applications
+
+
+#        args: s3 cp myapp.zip s3://elasticbeanstalk-us-east-2-867889859992/   
+#        args: elasticbeanstalk create-application-version --application-name raiDemoApp --version-label v0.0.2 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-867889859992",S3Key="myapp.zip"
+#        args: elasticbeanstalk update-environment --application-name raiDemoApp --environment-name Raidemoapp-env --version-label v0.2
