@@ -30,3 +30,13 @@ softwares installed in github agents: https://help.github.com/en/articles/softwa
 ebs commands: https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/index.html
 
 managing beanstalk applications: https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/applications.html
+
+
+
+
+Running commands:
+aws elasticbeanstalk create-application-version --application-name rai-demo --version-label v0.1 --description MyAppv1 --source-bundle S3Bucket="rai-demo-bucket",S3Key="NodeExpressSampleApp.1.zip"
+aws elasticbeanstalk update-environment --application-name rai-demo --environment-name raiDemo-env --version-label v0.1
+
+App: rai-demo
+Env: RaiDemo-env
